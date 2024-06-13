@@ -1,6 +1,8 @@
 package functions;
 
 import functions.special.B;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static java.lang.StrictMath.abs;
 
@@ -11,6 +13,9 @@ public class Calculator<T> {
     
     protected Double answer;
     protected T tmp;
+
+    private static final Logger logger = LogManager.getLogger(Calculator.class);
+
     public Calculator(){
         answer = 0.0;
         tmp = null;
@@ -22,7 +27,12 @@ public class Calculator<T> {
     }
 
     public void power(Double x) {
-        if (answer==null) return;//ignore
+        logger.info("power method is called");
+        if (answer==null) { //ignore
+            logger.info("answer is null");
+            return;
+        }
+        logger.info("do power calculation with " + x.toString() + " and " + answer.toString());
         answer = pow(answer, x);
     }
     public T tmp(T t){
@@ -31,28 +41,34 @@ public class Calculator<T> {
 
     public  <R> void plus_renamed (Double x){
         this.answer+=x;
+        logger.info("plus method is called");
     }
 
 
     public void minus( Double x){
         if(this.isNull(x, answer)){
+            logger.info("x or answer is null");
             return;
         }
+        logger.info("do minus calculation with " + x.toString() + " and " + answer.toString());
         this.answer-=x;
     }
 
     public void times ( Double x){
         if(isStaticNull(x, answer)){
+            logger.info("x or answer is null");
             return;
         }
+        logger.info("do times calculation with " + x.toString() + " and " + answer.toString());
         this.answer*=x;
     }
     public void divided(Double x  ){
         if(Calculator.isStaticNull(x, answer)){
+            logger.info("x or answer is null");
             return;
         }
         if (abs(x)<=0.0){
-            System.err.println("the number was divided by 0");
+            logger.warn("the number was divided by 0");
             answer = null;
             return;
         }

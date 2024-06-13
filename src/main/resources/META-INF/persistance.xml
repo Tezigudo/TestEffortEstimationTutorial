@@ -1,0 +1,3 @@
+<hibernate.connection.url>jdbc:postgresql://localhost:5432/test_break</hibernate.connection.url>
+<hibernate.connection.password> </hibernate.connection.password>
+<jar-file>META-INF/test-effort-estimation-on-refactoring-0.4.0-SNAPSHOT.jar</jar-file>
