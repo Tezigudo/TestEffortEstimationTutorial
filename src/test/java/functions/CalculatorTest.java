@@ -39,20 +39,20 @@ public class CalculatorTest {
        Double tmpAtribute = calc3.getAttribute();
        assertEquals(tmpAtribute, Double.valueOf(0.0));
    }
-   // @Test
-   // public void testFailure(){
-   //     Calculator3 calc3 = new Calculator3();
-   //     Double tmpAtribute = calc3.getAttribute();
-   //     assertEquals(tmpAtribute, Double.valueOf(100.0));
-   // }
-//    @Test
-//    public void testMinus_N001(){
-//         Calculator calc = new Calculator();
-//         calc.minus(1.0);
-//         assertEquals(calc.getAnswer(), Double.valueOf(-1.0));
-//         System.out.println();
-//         common();
-//    }
+    @Test(expected = AssertionError.class)
+    public void testFailure(){
+        Calculator3 calc3 = new Calculator3();
+        Double tmpAtribute = calc3.getAttribute();
+        assertEquals(tmpAtribute, Double.valueOf(100.0));
+    }
+    @Test
+    public void testMinus_N001(){
+         Calculator calc = new Calculator();
+         calc.minus(1.0);
+         assertEquals(calc.getAnswer(), Double.valueOf(-1.0));
+         System.out.println();
+         common();
+    }
 //    @Test
 //    public void testTimes_N002(){
 //        Calculator calc = new Calculator();
