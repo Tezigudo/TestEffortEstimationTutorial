@@ -99,6 +99,7 @@ public class CalculatorTest {
         assertEquals(i, Integer.valueOf(2));
     }
 
+    @Test
     public void testPower_N001(){
         Calculator calc = new Calculator();
         calc.plus(2.0);
