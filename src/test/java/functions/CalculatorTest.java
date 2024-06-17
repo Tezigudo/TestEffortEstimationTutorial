@@ -1,11 +1,16 @@
 package functions;
 
 
+import static functions.distributions.Calculator2.aho;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import functions.distributions.Calculator2;
 import functions.distributions.Calculator3;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CalculatorTest {
     @Deprecated
@@ -25,7 +30,7 @@ public class CalculatorTest {
    @Test
    public void testaho_N002(){
     Calculator2 calc2 = new Calculator2();
-    assertEquals(calc2.aho(), Integer.valueOf(1));
+    assertEquals(aho(), Integer.valueOf(1));
    }
    @Test
    public void testCalc2_N001(){
@@ -53,53 +58,53 @@ public class CalculatorTest {
          System.out.println();
          common();
     }
-//    @Test
-//    public void testTimes_N002(){
-//        Calculator calc = new Calculator();
-//        calc.times(null);
-//        assertEquals(calc.getAnswer(), Double.valueOf(0));
-//    }
-//    @Test
-//    public void testDivided_N001(){
-//        Calculator calc = new Calculator();
-//        calc.divided(1.0);
-//        assertEquals(calc.getAnswer(), Double.valueOf(0));
-//    }
-//    @Test
-//    public void testDivided_N002(){
-//        Calculator calc = new Calculator();
-//        calc.divided(null);
-//        assertEquals(calc.getAnswer(), Double.valueOf(0));
-//    }
-//    @Test
-//    public void testDivided_E001(){
-//        Calculator calc = new Calculator();
-//        calc.divided(0.0);
-//        assertNull(calc.getAnswer());
-//        aho();
-//    }
-//    @Test
-//    public void testLayer_N001(){
-//        Calculator calc = new Calculator();
-//        Integer i = calc.Layer1(3);
-//        assertEquals(i, Integer.valueOf(4));
-//    }
-//    @Test
-//    public void testLayer_N002(){
-//        Calculator calc = new Calculator();
-//        List<Integer> a = new ArrayList<Integer>();
-//        a.add(1);
-//        a.add(2);
-//        Integer i = calc.Layer1_2(a);
-//        assertEquals(i, Integer.valueOf(2));
-//    }
-//
-//    public void testPower_N001(){
-//        Calculator calc = new Calculator();
-//        calc.plus(2.0);
-//        calc.power(2.0);
-//        assertEquals(calc.getAnswer(), Double.valueOf(4));
-//    }
+    @Test
+    public void testTimes_N002(){
+        Calculator calc = new Calculator();
+        calc.times(null);
+        assertEquals(calc.getAnswer(), Double.valueOf(0));
+    }
+    @Test
+    public void testDivided_N001(){
+        Calculator calc = new Calculator();
+        calc.divided(1.0);
+        assertEquals(calc.getAnswer(), Double.valueOf(0));
+    }
+    @Test
+    public void testDivided_N002(){
+        Calculator calc = new Calculator();
+        calc.divided(null);
+        assertEquals(calc.getAnswer(), Double.valueOf(0));
+    }
+    @Test
+    public void testDivided_E001(){
+        Calculator calc = new Calculator();
+        calc.divided(0.0);
+        assertNull(calc.getAnswer());
+        aho();
+    }
+    @Test
+    public void testLayer_N001(){
+        Calculator calc = new Calculator();
+        Integer i = calc.Layer1(3);
+        assertEquals(i, Integer.valueOf(4));
+    }
+    @Test
+    public void testLayer_N002(){
+        Calculator calc = new Calculator();
+        List<Integer> a = new ArrayList<Integer>();
+        a.add(1);
+        a.add(2);
+        Integer i = calc.Layer1_2(a);
+        assertEquals(i, Integer.valueOf(2));
+    }
+
+    public void testPower_N001(){
+        Calculator calc = new Calculator();
+        calc.plus(2.0);
+        calc.power(2.0);
+        assertEquals(calc.getAnswer(), Double.valueOf(4));
+    }
 //    @Test
 //    public void testPower_N002(){
 //        Calculator calc = new Calculator();

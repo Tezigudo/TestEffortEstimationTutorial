@@ -44,6 +44,15 @@ public class Calculator<T> {
         logger.info("plus method is called");
     }
 
+    public void plus(Double x){
+        if(this.isNull(x, answer)){
+            logger.info("x or answer is null");
+            return;
+        }
+        logger.info("do plus calculation with " + x.toString() + " and " + answer.toString());
+        this.answer+=x;
+    }
+
 
     public void minus( Double x){
         if(this.isNull(x, answer)){
