@@ -9,6 +9,8 @@ import static java.lang.StrictMath.abs;
 import java.util.List;
 import static java.lang.StrictMath.pow;
 
+// TODO: Add more complex method, testcase, and log statement afor it
+
 public class Calculator<T> {
     
     protected Double answer;
@@ -21,6 +23,7 @@ public class Calculator<T> {
         tmp = null;
         Car car = Car.TOYOTA;
         car.values();
+        logger.info("Calculator is created");
     }
     public static Calculator create(){
         return new Calculator();
@@ -71,6 +74,7 @@ public class Calculator<T> {
         logger.info("do times calculation with " + x.toString() + " and " + answer.toString());
         this.answer*=x;
     }
+
     public void divided(Double x  ){
         if(Calculator.isStaticNull(x, answer)){
             logger.info("x or answer is null");
@@ -81,7 +85,21 @@ public class Calculator<T> {
             answer = null;
             return;
         }
+        logger.info("do divided calculation with " + x.toString() + " and " + answer.toString());
         this.answer/=x;
+    }
+
+    public void complex_statement(Double x, Double y){
+        if(this.isNull(x, answer)){
+            logger.info("x or answer is null");
+            return;
+        }
+        if(this.isNull(y, answer)){
+            logger.info("y or answer is null");
+            return;
+        }
+        logger.info("do complex statement calculation with " + x.toString() + " and " + y.toString() + " and " + answer.toString());
+        this.answer = pow(answer, x) + pow(answer, y);
     }
     public void aaa1(int i){}
     public void aaa1_1(int i, double j, Double d){}
@@ -105,6 +123,7 @@ public class Calculator<T> {
 
     public Double getAnswer()
     {
+        logger.info(" getting Answer: {}", answer);
         return answer;
     }
     private boolean isNull(Double x, Double answer) {
