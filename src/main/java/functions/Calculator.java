@@ -27,9 +27,8 @@ public class Calculator<T> {
     }
 
     public void power(Double x) {
-        logger.info("power method is called");
+
         if (answer == null) {
-            logger.info("answer is null");
             return;
         }
         logger.info("do power calculation with " + x.toString() + " and " + answer.toString());
@@ -56,7 +55,6 @@ public class Calculator<T> {
 
     public void minus(Double x){
         if (this.isNull(x, answer)){
-            logger.info("x or answer is null");
             return;
         }
         logger.info("do minus calculation with " + x.toString() + " and " + answer.toString());
@@ -65,7 +63,6 @@ public class Calculator<T> {
 
     public void times(Double x){
         if (isStaticNull(x, answer)){
-            logger.info("x or answer is null");
             return;
         }
         logger.info("do times calculation with " + x.toString() + " and " + answer.toString());
@@ -74,7 +71,6 @@ public class Calculator<T> {
 
     public void divided(Double x){
         if (Calculator.isStaticNull(x, answer)){
-            logger.info("x or answer is null");
             return;
         }
         if (abs(x) <= 0.0){
@@ -86,51 +82,7 @@ public class Calculator<T> {
         this.answer /= x;
     }
 
-    public void complex_statement(Double x, Double y){
-        if (this.isNull(x, answer)){
-            logger.info("x or answer is null");
-            return;
-        }
-        if (this.isNull(y, answer)){
-            logger.info("y or answer is null");
-            return;
-        }
-        logger.info("do complex statement calculation with " + x.toString() + " and " + y.toString() + " and " + answer.toString());
-        this.answer = pow(answer, x) + pow(answer, y);
-    }
 
-    // Complex method with nested if-else statements
-    public void nestedIfElse(Double x, Double y) {
-        logger.info("nestedIfElse method is called");
-        if (x == null || y == null) {
-            logger.warn("x or y is null");
-            answer = null;
-        } else if (x < 0 && y > 0) {
-            logger.info("x is negative and y is positive");
-            if (abs(x) > y) {
-                logger.info("absolute value of x is greater than y");
-                answer = x + y;
-            } else {
-                logger.info("absolute value of x is less than or equal to y");
-                answer = x - y;
-            }
-        } else if (x > 0 && y < 0) {
-            logger.info("x is positive and y is negative");
-            if (x > abs(y)) {
-                logger.info("x is greater than the absolute value of y");
-                answer = x * y;
-            } else {
-                logger.info("x is less than or equal to the absolute value of y");
-                answer = x / y;
-            }
-        } else {
-            logger.info("x and y are both positive or both negative or zero");
-            answer = x + y;
-        }
-        logger.info("nestedIfElse result is " + answer);
-    }
-
-    // Method to calculate the quadratic formula
     public Double[] quadraticFormula(Double a, Double b, Double c) {
         logger.info("quadraticFormula method is called with a={}, b={}, c={}", a, b, c);
         if (a == 0) {
@@ -172,6 +124,7 @@ public class Calculator<T> {
             logger.error("Fibonacci is not defined for negative numbers");
             return null;
         }
+
         double a = 0, b = 1, sum;
         for (int i = 2; i <= n; i++) {
             sum = a + b;
