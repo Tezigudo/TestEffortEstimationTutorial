@@ -1,8 +1,8 @@
 package functions;
 
 import functions.special.B;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static java.lang.StrictMath.abs;
 import static java.lang.StrictMath.pow;
@@ -14,7 +14,7 @@ public class Calculator<T> {
     protected Double answer;
     protected T tmp;
 
-    private static final Logger logger = LogManager.getLogger(Calculator.class);
+    private static final Logger logger = LoggerFactory.getLogger(Calculator.class);
 
     public Calculator(){
         answer = 0.0;
