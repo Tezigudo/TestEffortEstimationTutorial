@@ -323,14 +323,14 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testIsPrime_N007(){
+    public void testIsPrime_N006(){
         Calculator calc = new Calculator();
         Boolean result = calc.isPrime(0.0);
         assertEquals(result, Boolean.FALSE);
     }
 
     @Test
-    public void testIsPrime_N008(){
+    public void testIsPrime_N007(){
         Calculator calc = new Calculator();
         Boolean result = calc.isPrime(19.0);
         assertEquals(result, Boolean.TRUE);
