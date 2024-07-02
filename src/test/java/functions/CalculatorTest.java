@@ -20,20 +20,6 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testAdd_N001(){
-        Calculator calc = new Calculator();
-        calc.plus_renamed(1.0);
-        assertEquals(calc.getAnswer(), Double.valueOf(1));
-        common();
-    }
-
-    @Test
-    public void testaho_N002(){
-        Calculator2 calc2 = new Calculator2();
-        assertEquals(aho(), Integer.valueOf(1));
-    }
-
-    @Test
     public void testCalc2_N001(){
         Calculator2 calc2 = new Calculator2();
         Double answer = calc2.getAnswer();
@@ -142,23 +128,6 @@ public class CalculatorTest {
         calc.plus(1.0);
         calc.divided(-2.0);
         assertEquals(calc.getAnswer(), Double.valueOf(-0.5));
-    }
-
-    @Test
-    public void testLayer_N001(){
-        Calculator calc = new Calculator();
-        Integer i = calc.Layer1(3);
-        assertEquals(i, Integer.valueOf(4));
-    }
-
-    @Test
-    public void testLayer_N002(){
-        Calculator calc = new Calculator();
-        List<Integer> a = new ArrayList<Integer>();
-        a.add(1);
-        a.add(2);
-        Integer i = calc.Layer1_2(a);
-        assertEquals(i, Integer.valueOf(2));
     }
 
     @Test

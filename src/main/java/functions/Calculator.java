@@ -19,7 +19,6 @@ public class Calculator<T> {
     public Calculator(){
         answer = 0.0;
         tmp = null;
-        logger.info("Calculator is created");
     }
 
     public static Calculator create(){
@@ -84,7 +83,6 @@ public class Calculator<T> {
 
 
     public Double[] quadraticFormula(Double a, Double b, Double c) {
-        logger.info("quadraticFormula method is called with a={}, b={}, c={}", a, b, c);
         if (a == 0) {
             logger.error("a cannot be 0 in a quadratic equation");
             return null;
@@ -98,7 +96,6 @@ public class Calculator<T> {
         Double[] roots = new Double[2];
         roots[0] = (-b + sqrtDiscriminant) / (2 * a);
         roots[1] = (-b - sqrtDiscriminant) / (2 * a);
-        logger.info("Quadratic formula results: root1={}, root2={}", roots[0], roots[1]);
         return roots;
     }
 
@@ -117,11 +114,8 @@ public class Calculator<T> {
         return result;
     }
 
-    // Method to calculate the nth Fibonacci number
     public Double fibonacci(Double n) {
-        logger.info("fibonacci method is called with n={}", n);
         if (n < 0) {
-            logger.error("Fibonacci is not defined for negative numbers");
             return null;
         }
 
@@ -136,7 +130,6 @@ public class Calculator<T> {
         return result;
     }
 
-    // Method to check if a number is prime
     public Boolean isPrime(Double n) {
         logger.info("isPrime method is called with n={}", n);
         if (n < 2) {
@@ -145,7 +138,6 @@ public class Calculator<T> {
         }
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
-                logger.info("{} is not prime", n);
                 return false;
             }
         }
@@ -155,7 +147,6 @@ public class Calculator<T> {
 
 
     public Double getAnswer() {
-        logger.info(" getting Answer: {}", answer);
         return answer;
     }
 
@@ -167,17 +158,7 @@ public class Calculator<T> {
         return x == null || answer == null;
     }
 
-    public Integer Layer1(Integer a){
-        long ii = B.i;
-        long iii = functions.special.B.i;
-        Integer j = B.Layer2_RENAME(a);
-        return j;
-    }
 
-    public Integer Layer1_2(List<Integer> i){
-        Integer j = B.Layer2_2(i);
-        return j;
-    }
 
     public static void main(String[] args){
         Calculator calc = new Calculator();
