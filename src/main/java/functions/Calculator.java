@@ -84,7 +84,6 @@ public class Calculator<T> {
 
     public Double[] quadraticFormula(Double a, Double b, Double c) {
         if (a == 0) {
-            logger.error("a cannot be 0 in a quadratic equation");
             return null;
         }
         double discriminant = b * b - 4 * a * c;
@@ -101,7 +100,6 @@ public class Calculator<T> {
 
     // Method to calculate the factorial of a number
     public Double factorial(Double n) {
-        logger.info("factorial method is called with n={}", n);
         if (n < 0) {
             logger.error("Factorial is not defined for negative numbers");
             return null;
@@ -131,7 +129,6 @@ public class Calculator<T> {
     }
 
     public Boolean isPrime(Double n) {
-        logger.info("isPrime method is called with n={}", n);
         if (n < 2) {
             logger.info("{} is not prime", n);
             return false;

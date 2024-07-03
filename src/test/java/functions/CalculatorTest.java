@@ -8,9 +8,6 @@ import functions.distributions.Calculator2;
 import functions.distributions.Calculator3;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CalculatorTest {
 
     @Deprecated
