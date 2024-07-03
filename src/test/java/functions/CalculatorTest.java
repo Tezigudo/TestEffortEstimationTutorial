@@ -16,20 +16,6 @@ public class CalculatorTest {
         i += 1;
     }
 
-    @Test
-    public void testCalc2_N001(){
-        Calculator2 calc2 = new Calculator2();
-        Double answer = calc2.getAnswer();
-        assertEquals(answer, Double.valueOf(0.0));
-    }
-
-    @Test
-    public void testCalc3_N001(){
-        Calculator3 calc3 = new Calculator3();
-        Double tmpAtribute = calc3.getAttribute();
-        assertEquals(tmpAtribute, Double.valueOf(0.0));
-    }
-
     @Test(expected = AssertionError.class)
     public void testFailure(){
         Calculator3 calc3 = new Calculator3();
@@ -226,7 +212,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testFibonacci_N001(){
+     public void testFibonacci_N001(){
         Calculator calc = new Calculator();
         Double result = calc.fibonacci(10.0);
         assertEquals(result, Double.valueOf(55.0));

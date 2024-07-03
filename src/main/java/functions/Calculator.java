@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import static java.lang.StrictMath.abs;
 import static java.lang.StrictMath.pow;
 
-import java.util.List;
 
 public class Calculator<T> {
 
