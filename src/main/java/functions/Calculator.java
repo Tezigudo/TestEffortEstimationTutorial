@@ -18,6 +18,7 @@ public class Calculator<T> {
     public Calculator(){
         answer = 0.0;
         tmp = null;
+        logger.info("Calculator is created");
     }
 
     public static Calculator create(){
@@ -27,6 +28,7 @@ public class Calculator<T> {
     public void power(Double x) {
 
         if (answer == null) {
+            logger.info("answer is null, so return null");
             return;
         }
         logger.info("do power calculation with " + x.toString() + " and " + answer.toString());
@@ -53,6 +55,7 @@ public class Calculator<T> {
 
     public void minus(Double x){
         if (this.isNull(x, answer)){
+            logger.info("x or answer is null");
             return;
         }
         logger.info("do minus calculation with " + x.toString() + " and " + answer.toString());
@@ -69,6 +72,7 @@ public class Calculator<T> {
 
     public void divided(Double x){
         if (Calculator.isStaticNull(x, answer)){
+            logger.info("x or answer is null");
             return;
         }
         if (abs(x) <= 0.0){
@@ -80,9 +84,11 @@ public class Calculator<T> {
         this.answer /= x;
     }
 
-
     public Double[] quadraticFormula(Double a, Double b, Double c) {
+        logger.info("quadraticFormula method is called with a={}, b={}, c={}", a, b, c);
+
         if (a == 0) {
+            logger.error("a cannot be 0 in a quadratic equation");
             return null;
         }
         double discriminant = b * b - 4 * a * c;
@@ -94,11 +100,12 @@ public class Calculator<T> {
         Double[] roots = new Double[2];
         roots[0] = (-b + sqrtDiscriminant) / (2 * a);
         roots[1] = (-b - sqrtDiscriminant) / (2 * a);
+        logger.info("Quadratic formula results: root1={}, root2={}", roots[0], roots[1]);
         return roots;
     }
 
-    // Method to calculate the factorial of a number
     public Double factorial(Double n) {
+        logger.info("factorial method is called with n={}", n);
         if (n < 0) {
             logger.error("Factorial is not defined for negative numbers");
             return null;
@@ -112,7 +119,9 @@ public class Calculator<T> {
     }
 
     public Double fibonacci(Double n) {
+        logger.info("fibonacci method is called with n={}", n);
         if (n < 0) {
+            logger.error("Fibonacci is not defined for negative numbers");
             return null;
         }
 
@@ -128,12 +137,14 @@ public class Calculator<T> {
     }
 
     public Boolean isPrime(Double n) {
+        logger.info("isPrime method is called with n={}", n);
         if (n < 2) {
             logger.info("{} is not prime", n);
             return false;
         }
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
+                logger.info("{} is not prime", n);
                 return false;
             }
         }
@@ -143,9 +154,9 @@ public class Calculator<T> {
 
 
     public Double getAnswer() {
+        logger.info(" getting Answer: {}", answer);
         return answer;
     }
-
     private boolean isNull(Double x, Double answer) {
         return x == null || answer == null;
     }
@@ -153,8 +164,6 @@ public class Calculator<T> {
     public static boolean isStaticNull(Double x, Double answer) {
         return x == null || answer == null;
     }
-
-
 
     public static void main(String[] args){
         Calculator calc = new Calculator();
