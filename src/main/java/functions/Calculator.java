@@ -21,10 +21,6 @@ public class Calculator<T> {
         logger.info("Calculator is created");
     }
 
-    public static Calculator create(){
-        return new Calculator();
-    }
-
     public void power(Double x) {
 
         if (answer == null) {
