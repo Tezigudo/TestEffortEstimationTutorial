@@ -4,7 +4,6 @@ import static functions.distributions.Calculator2.aho;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import functions.distributions.Calculator2;
 import functions.distributions.Calculator3;
 import org.junit.Test;
 
