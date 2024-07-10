@@ -11,12 +11,7 @@ public class Calculator3 extends Calculator {
         //This over ride is no use
         return super.getAnswer();
     }
-    public static boolean isStaticNull(Double x, Double answer) {
-        if (x==null|answer==null){
-            return true;
-        }
-        return false;
-    }
+
     public static Double getAttribute()
     {
         return tmpAttribute.getTmpAttribute();
